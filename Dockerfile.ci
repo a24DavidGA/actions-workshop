@@ -1,0 +1,17 @@
+# Usa una imagen base de Node.js (puedes usar cualquier base según tus necesidades)
+FROM node:14
+
+# Crea y usa un directorio de trabajo
+WORKDIR /app
+
+# Copia el código fuente al contenedor
+COPY . .
+
+# Instala las dependencias
+RUN npm install
+
+# Expone el puerto en el que la aplicación correrá
+EXPOSE 3000
+
+# Comando para iniciar la aplicación
+CMD ["npm", "start"]
